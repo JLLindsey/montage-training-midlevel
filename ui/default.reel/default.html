@@ -9,12 +9,20 @@
             "properties": {
                 "element": {"#": "owner"}
             }
+        },
+        "greetingText": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "greetingText"},
+                "value": "Text"
+            }
         }
     }
     </script>
 </head>
 <body>
     <div data-montage-id="owner" class="Default">
+        <p data-montage-id="greetingText"></p>
     </div>
 </body>
 </html>
