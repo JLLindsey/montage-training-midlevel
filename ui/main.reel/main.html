@@ -13,6 +13,16 @@
                 "element": {"#": "main"}
             }
         },
+        "actionEventListener": {
+            "prototype": "montage/core/event/action-event-listener",
+            "properties": {
+                "action": "handleLogin",
+                "handler": {"@": "owner"}
+            },
+            "_dev": {
+                "isHidden": true
+            }
+        },
         "default": {
             "prototype": "ui/default.reel",
             "properties": {
@@ -26,7 +36,14 @@
                 "contenteditable": "true",
                 "dir": "ltr",
                 "draggable": "true"
-            }
+            },
+            "listeners": [
+                {
+                    "type": "loginEvent",
+                    "useCapture": false,
+                    "listener": {"@": "actionEventListener"}
+                }
+            ]
         },
         "substitution": {
             "prototype": "montage/ui/substitution.reel",

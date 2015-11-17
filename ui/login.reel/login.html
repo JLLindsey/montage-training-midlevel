@@ -10,6 +10,16 @@
                 "element": {"#": "owner"}
             }
         },
+        "actionEventListener": {
+            "prototype": "montage/core/event/action-event-listener",
+            "properties": {
+                "action": "loginActionHandler",
+                "handler": {"@": "owner"}
+            },
+            "_dev": {
+                "isHidden": true
+            }
+        },
         "loginButton": {
             "prototype": "digit/ui/button.reel",
             "properties": {
@@ -19,7 +29,14 @@
                 "draggable": "true",
                 "enabled": true,
                 "label": "Login"
-            }
+            },
+            "listeners": [
+                {
+                    "type": "action",
+                    "useCapture": false,
+                    "listener": {"@": "actionEventListener"}
+                }
+            ]
         },
         "passwordInput": {
             "prototype": "digit/ui/text-field.reel",
