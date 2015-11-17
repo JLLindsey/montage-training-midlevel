@@ -9,12 +9,46 @@
             "properties": {
                 "element": {"#": "owner"}
             }
+        },
+        "loginButton": {
+            "prototype": "digit/ui/button.reel",
+            "properties": {
+                "element": {"#": "loginButton"},
+                "contenteditable": "true",
+                "dir": "ltr",
+                "draggable": "true",
+                "enabled": true,
+                "label": "Login"
+            }
+        },
+        "passwordInput": {
+            "prototype": "digit/ui/text-field.reel",
+            "properties": {
+                "element": {"#": "passwordInput"},
+                "contenteditable": "true",
+                "dir": "ltr",
+                "draggable": "true",
+                "placeholderValue": "Enter Password"
+            }
+        },
+        "usernameInput": {
+            "prototype": "digit/ui/text-field.reel",
+            "properties": {
+                "element": {"#": "usernameInput"},
+                "contenteditable": "true",
+                "dir": "ltr",
+                "draggable": "true",
+                "placeholderValue": "Enter Username"
+            }
         }
     }
     </script>
 </head>
 <body>
     <div data-montage-id="owner" class="Login">
+        <input data-montage-id="usernameInput" type="text">
+        <input data-montage-id="passwordInput" type="text">
+        <button data-montage-id="loginButton"></button>
     </div>
 </body>
 </html>
