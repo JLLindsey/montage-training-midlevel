@@ -45,6 +45,17 @@
                 }
             ]
         },
+        "logoutButton": {
+            "prototype": "digit/ui/button.reel",
+            "properties": {
+                "element": {"#": "logoutButton"},
+                "contenteditable": "true",
+                "dir": "ltr",
+                "draggable": "true",
+                "enabled": true,
+                "label": "Logout"
+            }
+        },
         "substitution": {
             "prototype": "montage/ui/substitution.reel",
             "properties": {
@@ -57,6 +68,7 @@
 </head>
 <body>
     <div data-montage-id="main" data-montage-skin="light" class="Main">
+        <button data-montage-id="logoutButton"></button>
         <div data-montage-id="substitution">
             <div data-montage-id="login" data-arg="login"></div>
             <div data-montage-id="default" data-arg="default"></div>
