@@ -27,14 +27,22 @@
                 "dir": "ltr",
                 "draggable": "true"
             }
+        },
+        "substitution": {
+            "prototype": "montage/ui/substitution.reel",
+            "properties": {
+                "element": {"#": "substitution"}
+            }
         }
     }
     </script>
 </head>
 <body>
     <div data-montage-id="main" data-montage-skin="light" class="Main">
-        <div data-montage-id="login"></div>
-        <div data-montage-id="default"></div>
+        <div data-montage-id="substitution">
+            <div data-montage-id="login" data-arg="login"></div>
+            <div data-montage-id="default" data-arg="default"></div>
+        </div>
     </div>
 </body>
 </html>
