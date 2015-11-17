@@ -22,7 +22,7 @@ exports.Main = Component.specialize(/** @lends Main# */ {
     },
     logoutActionHandler: {
         value: function (event) {
-            this.dispatchEventNamed("loginEvent", true, false, {successful;false});
+            this.dispatchEventNamed("loginEvent", true, false, {successful:false});
             event.stopPropogation();
         }
     },
