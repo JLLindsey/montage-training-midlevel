@@ -11,7 +11,19 @@
         "owner": {
             "properties": {
                 "element": {"#": "main"}
-            }
+            },
+            "listeners": [
+                {
+                    "type": "action",
+                    "useCapture": false,
+                    "listener": {"@": "logoutButtonListener"}
+                },
+                {
+                    "type": "loginEvent",
+                    "useCapture": false,
+                    "listener": {"@": "actionEventListener"}
+                }
+            ]
         },
         "actionEventListener": {
             "prototype": "montage/core/event/action-event-listener",
@@ -36,14 +48,7 @@
                 "contenteditable": "true",
                 "dir": "ltr",
                 "draggable": "true"
-            },
-            "listeners": [
-                {
-                    "type": "loginEvent",
-                    "useCapture": false,
-                    "listener": {"@": "actionEventListener"}
-                }
-            ]
+            }
         },
         "logoutButton": {
             "prototype": "digit/ui/button.reel",
@@ -53,7 +58,28 @@
                 "dir": "ltr",
                 "draggable": "true",
                 "enabled": true,
-                "label": "Logout"
+                "label": "Logout",
+                "removalStrategy": "hide"
+            }
+        },
+        "logoutButtonListener": {
+            "prototype": "montage/core/event/action-event-listener",
+            "properties": {
+                "action": "logoutActionHandler",
+                "handler": {"@": "owner"}
+            },
+            "_dev": {
+                "isHidden": true
+            }
+        },
+        "logoutCondition": {
+            "prototype": "montage/ui/condition.reel",
+            "properties": {
+                "element": {"#": "logoutCondition"},
+                "contenteditable": "true",
+                "dir": "ltr",
+                "draggable": "true",
+                "removalStrategy": "remove"
             }
         },
         "substitution": {
@@ -68,7 +94,9 @@
 </head>
 <body>
     <div data-montage-id="main" data-montage-skin="light" class="Main">
-        <button data-montage-id="logoutButton"></button>
+        <div data-montage-id="logoutCondition">
+            <button data-montage-id="logoutButton"></button>
+        </div>
         <div data-montage-id="substitution">
             <div data-montage-id="login" data-arg="login"></div>
             <div data-montage-id="default" data-arg="default"></div>
