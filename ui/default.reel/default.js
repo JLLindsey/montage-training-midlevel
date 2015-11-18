@@ -14,7 +14,7 @@ exports.Default = Component.specialize(/** @lends Default# */ {
         }
     },
     enterDocument: {
-        value: function (firstTime){
+        value: function (firstTime) {
             if (firstTime) {
                 this.templateObjects.stormController.content = [
                     {"name":"Wilma", "type":"Tropical Storm"},
