@@ -17,10 +17,19 @@
                 "value": "Hello"
             }
         },
+        "stormController": {
+            "prototype": "montage/core/range-controller"
+        },
         "stormList": {
             "prototype": "montage/ui/repetition.reel",
             "properties": {
-                "element": {"#": "stormList"}
+                "element": {"#": "stormList"},
+                "contenteditable": "true",
+                "dir": "ltr",
+                "draggable": "true"
+            },
+            "bindings": {
+                "contentController": {"<-": "@stormController"}
             }
         },
         "stormName": {
@@ -30,7 +39,7 @@
                 "value": "Text"
             },
             "bindings": {
-                "value": {"<-": "@stormList:iteration.object"}
+                "value": {"<-": "@stormList:iteration.object.name"}
             }
         }
     }
