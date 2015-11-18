@@ -12,5 +12,17 @@ exports.Default = Component.specialize(/** @lends Default# */ {
         value: function Default() {
             this.super();
         }
+    },
+    enterDocument: {
+        value: function (firstTime){
+            if (firstTime) {
+                this.templateObjects.stormController.content = [
+                    {"name":"Wilma", "type":"Tropical Storm"},
+                    {"name":"Fred", "type":"Hurricane"},
+                    {"name":"Betty", "type":"Tropical Storm"},
+                    {"name":"Barney", "type":"Hurricane"}
+                    ];
+            }
+        }
     }
 });

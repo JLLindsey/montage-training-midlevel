@@ -16,6 +16,22 @@
                 "element": {"#": "greetingText"},
                 "value": "Hello"
             }
+        },
+        "stormList": {
+            "prototype": "montage/ui/repetition.reel",
+            "properties": {
+                "element": {"#": "stormList"}
+            }
+        },
+        "stormName": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "stormName"},
+                "value": "Text"
+            },
+            "bindings": {
+                "value": {"<-": "@stormList:iteration.object"}
+            }
         }
     }
     </script>
@@ -23,6 +39,9 @@
 <body>
     <div data-montage-id="owner" class="Default">
         <p data-montage-id="greetingText"></p>
+        <ul data-montage-id="stormList">
+            <p data-montage-id="stormName"></p>
+        </ul>
     </div>
 </body>
 </html>
